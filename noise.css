@@ -3,23 +3,23 @@ html {
 }
 
 body {
-  background-color: black;   
+  background-color: black;
 }
 
 .instrument {
   height: 10rem;
-  width: 60rem;
   margin: 5rem auto;
+  width: 60rem;
 }
 
 .note {
+  border: 3px solid currentColor;
   cursor: pointer;
   font-size: 3rem;
-  width: 8rem;
   height: 8rem;
   margin: 0;
   padding: 0;
-  border: 3px solid currentColor;
+  width: 8rem;
 }
 
 .note:focus { outline: none; }
