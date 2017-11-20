@@ -47,11 +47,12 @@ $(document).ready( function() {
         }
       })(e.key);
       let key = $('.note.' + note)
-      window.setTimeout(() => {
-        key.toggleClass('active');
-      }, 100);
       key.toggleClass('active');
       playNote(note);
     }
+  });
+
+  $('body').keyup(() => {
+    $('.note').removeClass('active');
   });
 });
