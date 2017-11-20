@@ -46,7 +46,11 @@ $(document).ready( function() {
             break;
         }
       })(e.key);
-      // $('.note.' + note).toggleClass('active');
+      let key = $('.note.' + note)
+      window.setTimeout(() => {
+        key.toggleClass('active');
+      }, 100);
+      key.toggleClass('active');
       playNote(note);
     }
   });
