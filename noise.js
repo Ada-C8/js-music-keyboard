@@ -24,7 +24,22 @@ const playNote = function playNote(n) {
   });
 }
 
+const playNoteForSong = function play(n, time) {
+  const player = $(`#${n}Audio`).get(0);
+  player.play();
+  $(`#${n}Audio`).bind('timeupdate', function () {
+    console.log(time);
+    console.log(this.currentTime);
+    if (this.currentTime >= time) {
+      this.pause();
+      this.currentTime = 0;
+    }
+  });
+}
 
+const delay = function delay(n) {
+  return n*1000;
+}
 
 $(document).ready(function() {
   const playC = makeNote('c');
@@ -43,5 +58,31 @@ $(document).ready(function() {
   const playAkey = playNote('a');
   const playBkey = playNote('b');
 
+  const quarter = 1.25;
+  const eighth = 0.5;
+  const quarterP = 1;
+  const double = 2;
+  const whole = 4;
+
+  const song = [
+    {c: quarterP},
+    {d: eighth},
+    {e: quarter},
+    {c: eighth},
+    {e: quarter},
+    {c: quarter},
+    {e: double},
+    {d: quarterP},
+    {e: eighth},
+    {f: eighth},
+    {f: eighth},
+    {e: eighth},
+    {d: eighth},
+    {f: whole},
+  ];
+
+  let start = 0;
+  setTimeout(function () {playNoteForSong('c', quarterP)}, delay(0));
+  setTimeout(function () {playNoteForSong('d', eighth)}, delay(quarterP));
 
 })
