@@ -20,28 +20,34 @@ $(document).ready( function() {
   });
 
   $('body').keydown((e) => {
-    switch (e.key) {
-      case 'z':
-        playNote('c');
-        break;
-      case 'x':
-        playNote('d');
-        break;
-      case 'c':
-        playNote('e');
-        break;
-      case 'v':
-        playNote('f');
-        break;
-      case 'b':
-        playNote('g');
-        break;
-      case 'n':
-        playNote('a');
-        break;
-      case 'm':
-        playNote('b');
-        break;
+    if (['z', 'x', 'c', 'v', 'b', 'n', 'm'].includes(e.key)) {
+      let note = ((note) => {
+        switch (note) {
+          case 'z':
+            return 'c';
+            break;
+          case 'x':
+            return 'd';
+            break;
+          case 'c':
+            return 'e';
+            break;
+          case 'v':
+            return 'f';
+            break;
+          case 'b':
+            return 'g';
+            break;
+          case 'n':
+            return 'a';
+            break;
+          case 'm':
+            return 'b';
+            break;
+        }
+      })(e.key);
+      // $('.note.' + note).toggleClass('active');
+      playNote(note);
     }
   });
 });
