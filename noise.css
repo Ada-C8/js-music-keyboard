@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: black;   
+  background-color: black;
 }
 
 .instrument {
@@ -21,6 +21,8 @@ body {
   padding: 0;
   border: 3px solid currentColor;
 }
+
+
 
 .note:focus { outline: none; }
 
@@ -51,3 +53,8 @@ body {
 .b { color: #f26fd4; background-color: #43293d; }
 .b:hover { background-color: #6f3a62; }
 .b:active, .b.active { background-color: #f26fd4; }
+
+
+#audio_embeds audio [type=_audio/mpeg] {
+  border: 1px red solid;
+}
