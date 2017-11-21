@@ -1,10 +1,20 @@
 $(document).ready(() => {
-// C
-  $('.c').on('click', () => {
-    $('#cAudio')[0].load();
-    $('#cAudio')[0].play();
+
+  $('.instrument').on('click', 'button', function click() {
+    const note = $(this)[0].innerHTML;
+    $(`#${note}Audio`)[0].load();
+    $(`#${note}Audio`)[0].play();
+
+
   });
 
+
+// C
+  // $('.c').on('click', () => {
+  //   $('#cAudio')[0].load();
+  //   $('#cAudio')[0].play();
+  // });
+  //
   $('body').keydown((event) => {
     if (event.keyCode === 67) {
       $('#cAudio').removeClass();
@@ -14,10 +24,10 @@ $(document).ready(() => {
   });
 
 // D
-  $('.d').on('click', () => {
-    $('#dAudio')[0].load();
-    $('#dAudio')[0].play();
-  });
+//   $('.d').on('click', () => {
+//     $('#dAudio')[0].load();
+//     $('#dAudio')[0].play();
+//   });
 
   $('body').keydown((event) => {
     if (event.keyCode === 68) {
@@ -26,13 +36,13 @@ $(document).ready(() => {
       $('#dAudio')[0].play();
     }
   });
-
-
-// E
-  $('.e').on('click', () => {
-    $('#eAudio')[0].load();
-    $('#eAudio')[0].play();
-  });
+//
+//
+// // E
+//   $('.e').on('click', () => {
+//     $('#eAudio')[0].load();
+//     $('#eAudio')[0].play();
+//   });
 
   $('body').keydown((event) => {
     if (event.keyCode === 69) {
@@ -41,13 +51,13 @@ $(document).ready(() => {
       $('#eAudio')[0].play();
     }
   });
-
-// F
-  $('.f').on('click', () => {
-    $('#fAudio')[0].load();
-    $('#fAudio')[0].play();
-  });
-
+//
+// // F
+//   $('.f').on('click', () => {
+//     $('#fAudio')[0].load();
+//     $('#fAudio')[0].play();
+//   });
+//
   $('body').keydown((event) => {
     if (event.keyCode === 70) {
       $('#fAudio').removeClass();
@@ -55,12 +65,12 @@ $(document).ready(() => {
       $('#fAudio')[0].play();
     }
   });
-
-// G
-  $('.g').on('click', () => {
-    $('#gAudio')[0].load();
-    $('#gAudio')[0].play();
-  });
+//
+// // G
+//   $('.g').on('click', () => {
+//     $('#gAudio')[0].load();
+//     $('#gAudio')[0].play();
+//   });
 
   $('body').keydown((event) => {
     if (event.keyCode === 71) {
@@ -69,12 +79,12 @@ $(document).ready(() => {
       $('#gAudio')[0].play();
     }
   });
-
-// A
-  $('.a').on('click', () => {
-    $('#aAudio')[0].load();
-    $('#aAudio')[0].play();
-  });
+//
+// // A
+//   $('.a').on('click', () => {
+//     $('#aAudio')[0].load();
+//     $('#aAudio')[0].play();
+//   });
 
   $('body').keydown((event) => {
     if (event.keyCode === 65) {
@@ -83,12 +93,12 @@ $(document).ready(() => {
       $('#aAudio')[0].play();
     }
   });
-
-// B
-  $('.b').on('click', () => {
-    $('#bAudio')[0].load();
-    $('#bAudio')[0].play();
-  });
+//
+// // B
+//   $('.b').on('click', () => {
+//     $('#bAudio')[0].load();
+//     $('#bAudio')[0].play();
+//   });
 
   $('body').keydown((event) => {
     if (event.keyCode === 66) {
