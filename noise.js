@@ -1,7 +1,7 @@
 $(document).ready( function() {
   // your code here
-  var playNote = function(note) {
-    var id = '#' + note + 'Audio';
+  let playNote = function(note) {
+    let id = '#' + note + 'Audio';
     $(id).get(0).load();
     $(id).get(0).play();
   };
@@ -10,7 +10,7 @@ $(document).ready( function() {
     playNote($(this).html());
   });
 
-  var notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
+  let notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
   $('body').keydown(function (event) {
     if (notes.includes(event.key)) {
       playNote(event.key);
