@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: black;   
+  background-color: black;
 }
 
 .instrument {
@@ -51,3 +51,7 @@ body {
 .b { color: #f26fd4; background-color: #43293d; }
 .b:hover { background-color: #6f3a62; }
 .b:active, .b.active { background-color: #f26fd4; }
+
+.yellow {
+  border: 10px solid yellow;
+}
