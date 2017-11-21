@@ -54,7 +54,18 @@ body {
 .b:hover { background-color: #6f3a62; }
 .b:active, .b.active { background-color: #f26fd4; }
 
+.surprise {
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 16rem;
+  height: 4rem;
+  margin-top: 10px;
+  margin-left: calc((100% - 16rem)/2);
+  padding: 5;
+  border: 3px solid currentColor;
+  color: #23B5D3;
+  background-color: #115463;
 
-#audio_embeds audio [type=_audio/mpeg] {
-  border: 1px red solid;
 }
+.surprise:hover { background-color: #18788C; }
+.surprise:active, .surprise.active { background-color: #18788C; }
