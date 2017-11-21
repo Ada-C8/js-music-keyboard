@@ -9,5 +9,10 @@ $(document).ready(() => {
     playNote($(this).html());
   });
 
-  
+  $('body').on('keydown', (event) => {
+    const note = document.getElementById(`${event.key}Audio`);
+    if (note) {
+      playNote(event.key);
+    }
+  });
 });
