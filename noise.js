@@ -1,11 +1,14 @@
 /* eslint-disable */
-const COLORS = ['#db1d2d', '#f0421c', '#fec02d', '#20d071','#1a9ddb','#a13fad','#f26fd4'];
+const COLORS = {
+  c: '#db1d2d', d: '#f0421c', e: '#fec02d', f: '#20d071', g: '#1a9ddb', a: '#a13fad', b: '#f26fd4', mc:'#dedede'};
 const makeNote = function makeNote(n) {
   return $(`.${n}`).on('click', function() {
     console.log(n);
     let note = $(`#${n}Audio`).get(0);
     note.load();
     note.play();
+    $('body').css('background-color', COLORS[n]);
+    setTimeout(function() {$('body').css('background-color', 'black')}, 2000);
   });
 }
 
@@ -17,6 +20,7 @@ const playNote = function playNote(n) {
       console.log(n);
       // note.load();
       note.play();
+      $('body').css('background-color', COLORS[n]);
     }
   });
   $('body').on("keyup", function(event) {
@@ -24,12 +28,14 @@ const playNote = function playNote(n) {
       console.log(n);
       note.pause();
       note.currentTime = 0;
+      $('body').css('background-color','black');
     }
   });
 }
 
 const playNoteForSong = function play(n, time) {
   const player = $(`#${n}Audio`).get(0);
+  $('body').css('background-color', COLORS[n]);
   player.load();
   player.play();
   console.log(n);
@@ -243,6 +249,7 @@ const playSong = function playSong() {
   start += song[58][1];
   setTimeout(function () {playNoteForSong(song[59][0], song[59][1])}, delay(start));
   start += song[59][1];
+  setTimeout(function () {$('body').css('background-color', 'black')}, delay(start));
 };
 
 $(document).ready(function() {
