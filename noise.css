@@ -3,7 +3,8 @@ html {
 }
 
 body {
-  background-color: black;   
+  background-color: black;
+  text-align: center;
 }
 
 .instrument {
@@ -51,3 +52,7 @@ body {
 .b { color: #f26fd4; background-color: #43293d; }
 .b:hover { background-color: #6f3a62; }
 .b:active, .b.active { background-color: #f26fd4; }
+
+.play { color: white; background-color: #464545;}
+.play:hover { background-color: #737373; }
+.play:active, .play.active { background-color: white; }

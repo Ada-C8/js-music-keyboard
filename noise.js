@@ -1,8 +1,11 @@
 /* eslint-disable */
+const COLORS = ['#db1d2d', '#f0421c', '#fec02d', '#20d071','#1a9ddb','#a13fad','#f26fd4'];
 const makeNote = function makeNote(n) {
   return $(`.${n}`).on('click', function() {
     console.log(n);
-    $(`#${n}Audio`).get(0).play();
+    let note = $(`#${n}Audio`).get(0);
+    note.load();
+    note.play();
   });
 }
 
@@ -12,7 +15,7 @@ const playNote = function playNote(n) {
   $('body').on("keydown", function(event) {
     if (event.key === n) {
       console.log(n);
-      note.load();
+      // note.load();
       note.play();
     }
   });
@@ -29,9 +32,8 @@ const playNoteForSong = function play(n, time) {
   const player = $(`#${n}Audio`).get(0);
   player.load();
   player.play();
+  console.log(n);
   $(`#${n}Audio`).bind('timeupdate', function () {
-    console.log(time);
-    console.log(this.currentTime);
     if (this.currentTime >= (time)) {
       this.pause();
       // this.currentTime = 0;
@@ -100,41 +102,23 @@ const song = [
   ['g', eighth],
   ['a', eighth],
   ['b', eighth],
-  ['b', quarterP],
+  ['mc', quarterP],
 
-  ['b', eighth],
+  ['mc', eighth],
   ['b', eighth],
   ['a', quarter],
   ['f', quarter],
   ['b', quarter],
   ['g', quarter],
-  ['b', quarter],
+  ['mc', quarter],
   ['g', quarter],
   ['e', quarter],
   ['d', quarter],
   ['c', double],
 ];
 
-$(document).ready(function() {
-  const playC = makeNote('c');
-  const playD = makeNote('d');
-  const playE = makeNote('e');
-  const playF = makeNote('f');
-  const playG = makeNote('g');
-  const playA = makeNote('a');
-  const playB = makeNote('b');
-
-  const playCkey = playNote('c');
-  const playDkey = playNote('d');
-  const playEkey = playNote('e');
-  const playFkey = playNote('f');
-  const playGkey = playNote('g');
-  const playAkey = playNote('a');
-  const playBkey = playNote('b');
-
-
+const playSong = function playSong() {
   let start = 0;
-
   setTimeout(function () {playNoteForSong(song[0][0], song[0][1])}, delay(start));
   start += song[0][1];
   setTimeout(function () {playNoteForSong(song[1][0], song[1][1])}, delay(start));
@@ -259,4 +243,27 @@ $(document).ready(function() {
   start += song[58][1];
   setTimeout(function () {playNoteForSong(song[59][0], song[59][1])}, delay(start));
   start += song[59][1];
+};
+
+$(document).ready(function() {
+  const playC = makeNote('c');
+  const playD = makeNote('d');
+  const playE = makeNote('e');
+  const playF = makeNote('f');
+  const playG = makeNote('g');
+  const playA = makeNote('a');
+  const playB = makeNote('b');
+
+  const playCkey = playNote('c');
+  const playDkey = playNote('d');
+  const playEkey = playNote('e');
+  const playFkey = playNote('f');
+  const playGkey = playNote('g');
+  const playAkey = playNote('a');
+  const playBkey = playNote('b');
+
+  $('.play').click( function () {
+    playSong();
+  });
+
 })
