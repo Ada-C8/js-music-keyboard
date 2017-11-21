@@ -30,4 +30,16 @@ $(document).ready(() => {
       }
     });
   });
-});
+
+// this is a background song with a delay
+// const audioArray = document.getElementsByClassName('song');
+// let i = 0;
+// audioArray[i].play();
+// for (i = 0; i < audioArray.length - 1; ++i) {
+//     audioArray[i].addEventListener('ended', function(e){
+//         let currentSong = e.target;
+//         let next = $(currentSong).nextAll('audio');
+//         if (next.length) $(next[0]).trigger('play');
+//     });
+// }
+// });
