@@ -4,13 +4,15 @@ $(document).ready(() => {
     const note = $(this)[0].innerHTML;
     $(`#${note}Audio`)[0].load();
     $(`#${note}Audio`)[0].play();
+  });
+  
+  $('body').keydown((event) => {
+    const notePressed = `#${event.key}Audio`
+    $(notePressed).get(0).load();
+    $(notePressed).get(0).play();
+  });
+});
 
-    // must click a note before pressing keyboard buttons works
-    $('body').keydown((event) => {
-      const notePressed = `#${event.key}Audio`
-      $(notePressed).get(0).load();
-      $(notePressed).get(0).play();
-    });
 
 // refactored
     // $('body').keydown((event) => {
@@ -37,5 +39,3 @@ $(document).ready(() => {
     //     $('#bAudio')[0].play();
     //   }
     // });
-  });
-});
